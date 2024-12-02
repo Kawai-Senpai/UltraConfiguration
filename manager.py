@@ -25,21 +25,27 @@ class UltraConfig:
     _file_lock = Lock()
     _configs_cache = weakref.WeakValueDictionary()  # Memory optimization
     
-    def __new__(cls) -> 'UltraConfig':
+    def __new__(cls, config_file: Optional[Union[str, Path]] = None) -> 'UltraConfig':
         if not cls._instance:
             with cls._lock:
                 if not cls._instance:
                     cls._instance = super().__new__(cls)
-                    cls._instance._initialize()
+                    cls._instance._initialize(config_file)
+        elif config_file:
+            # If instance exists but new config_file is provided, load it
+            cls._instance.load_config(config_file)
         return cls._instance
 
-    def _initialize(self) -> None:
+    def _initialize(self, config_file: Optional[Union[str, Path]] = None) -> None:
         """Initialize instance attributes"""
         self._configs: Dict[str, Any] = {}
         self._config_schema: Dict[str, Any] = {}
         self._modified = False
         self._executor = ThreadPoolExecutor(max_workers=4, thread_name_prefix="ultraconfig")
         self._setup_logging()
+        
+        if config_file:
+            self.load_config(config_file)
 
     def _setup_logging(self) -> None:
         """Configure logging for the config manager"""
