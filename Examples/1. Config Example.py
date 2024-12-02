@@ -2,10 +2,7 @@ from ultraconfiguration import UltraConfig
 
 def main():
     # Create config instance
-    config = UltraConfig()
-
-    # Load from JSON
-    config.load_config('config.json')
+    config = UltraConfig('config.json')
 
     # Access nested values
     db_host = config.get('database.host', 'localhost')
