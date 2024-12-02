@@ -1,4 +1,4 @@
-# UltraConfig
+# UltraConfiguration
 
 A high-performance, thread-safe configuration management library for Python with async support.
 

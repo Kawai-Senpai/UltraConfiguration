@@ -1,4 +1,4 @@
-from ultraconfig import UltraConfig
+from ultraconfiguration import UltraConfig
 
 def main():
     # Create config instance

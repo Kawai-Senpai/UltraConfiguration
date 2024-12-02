@@ -1,6 +1,5 @@
-
 import asyncio
-from ultraconfig import UltraConfig
+from ultraconfiguration import UltraConfig
 
 async def main():
     config = UltraConfig()
