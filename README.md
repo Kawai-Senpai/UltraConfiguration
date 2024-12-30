@@ -2,6 +2,8 @@
 
 A high-performance, thread-safe configuration management library for Python with async support.
 
+![UltraConfiguration Thumbnail](https://github.com/Kawai-Senpai/UltraConfiguration/blob/8f6cc341d9de40b0e70ae71ce2f8df9d58178746/Assets/Ultraconfiguration%20Thumbnail.png)
+
 ## Table of Contents
 1. Introduction
 2. Installation
@@ -133,11 +135,6 @@ Below is a quick reference to commonly used methods in UltraConfig:
 
 - **has_changes()**  
   Checks if the in-memory config differs from what’s on disk.
-
-## Badges
-![PyPI Version](https://img.shields.io/pypi/v/ultraconfiguration.svg)
-![License](https://img.shields.io/github/license/YourUserName/UltraConfiguration.svg)
-![Downloads](https://img.shields.io/pypi/dm/ultraconfiguration.svg)
 
 ## Advanced Usage
 Use environment variables for dynamic overrides:
